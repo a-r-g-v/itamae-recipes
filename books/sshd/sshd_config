@@ -1,0 +1,46 @@
+Port 22000
+AddressFamily inet
+Protocol 2
+UsePrivilegeSeparation yes
+Ciphers aes128-ctr,aes192-ctr,aes256-ctr
+ 
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_dsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+ 
+SyslogFacility AUTHPRIV
+LogLevel INFO
+ 
+PermitRootLogin without-password
+StrictModes yes
+ 
+PubkeyAuthentication yes
+ 
+HostbasedAuthentication no
+IgnoreRhosts yes
+ 
+PasswordAuthentication yes
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+ 
+KerberosAuthentication no
+GSSAPIAuthentication no
+UsePAM no
+ 
+AllowAgentForwarding no 
+AllowTcpForwarding no 
+GatewayPorts no 
+X11Forwarding no 
+ 
+PrintMotd yes
+PrintLastLog yes
+UseDNS no
+PermitTunnel no
+ClientAliveInterval 60 
+ClientAliveCountMax 3
+ 
+Subsystem sftp /usr/lib/openssh/sftp-server 
+
+
+
