@@ -1,5 +1,5 @@
 execute "update" do
-  command "apt-get update -u && apt-get upgrade -y"
+  command "apt-get update -y && apt-get upgrade -y"
 end
 
 package 'vim' do
@@ -23,6 +23,6 @@ package 'curl' do
 end
 
 package 'htop' do
-  action :intall
+  action :install
 end
 

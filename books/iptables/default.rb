@@ -6,7 +6,7 @@ remote_file "/tmp/iptables.sh" do
     source "iptables.sh"
 end
 
-ecute "run iptables" do
+execute "run iptables" do
     command "bash /tmp/iptables.sh"
 end
 
